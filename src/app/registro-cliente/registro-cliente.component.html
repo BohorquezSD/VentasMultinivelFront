@@ -1,0 +1,49 @@
+
+<div *ngIf="log">
+
+<div class="center">
+  <div >
+    <strong>Ingrese los datos del cliente a registrar:
+    </strong>
+  </div>
+</div>
+  <br>
+  <div class="center">
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="nombre">Cedula *: </label>
+            <textarea style="width: 450px" class="form-control" id="nombreInput" rows="1" required [(ngModel)]="cliente.codigo" name="ceula"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="nombre">Nombre *: </label>
+            <textarea style= "width: 450px" class="form-control" id="nombreInput" rows="1" required [(ngModel)]="cliente.nombre" name="nombre"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="descripcionInput">Apellido *: </label>
+            <textarea  style= "width: 450px" class="form-control" id="descripcionInput" rows="1" required [(ngModel)]="cliente.apellido" name="descripcion"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="descripcionInput">Direccion *: </label>
+            <textarea  style= "width: 450px" class="form-control" id="descripcionInput" rows="1" required [(ngModel)]="cliente.direccion" name="descripcion"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="descripcionInput">Ciudad *: </label>
+            <textarea  style= "width: 450px" class="form-control" id="descripcionInput" rows="1" required [(ngModel)]="cliente.ciudad" name="descripcion"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="descripcionInput">Telefono *: </label>
+            <textarea  style= "width: 450px" class="form-control" id="descripcionInput" rows="1" required [(ngModel)]="cliente.telefono" name="descripcion"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="descripcionInput">Correo *: </label>
+            <textarea  style= "width: 450px" class="form-control" id="descripcionInput" rows="1" required [(ngModel)]="cliente.correo" name="descripcion"></textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br>
+  <input (click)="enviarDatosCliente()" class="btn" type="submit" value="Registrar Cliente" style="margin: auto">
+  </div>

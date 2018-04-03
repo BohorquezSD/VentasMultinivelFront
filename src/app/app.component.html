@@ -1,0 +1,46 @@
+<div style="text-align:center">
+  <h1>
+    Bienvenido a {{title}}!
+  </h1>
+</div>
+
+<ul class="menu" *ngIf="logged">
+  <li>
+    <a routerLink="registroCliente"> Registrar Cliente </a>
+  </li>
+  <li>
+    <a routerLink="registroVenta"> Registrar Venta </a>
+  </li>
+  <li >
+    <a routerLink="administraPriv"> Revisar roles </a>
+  </li>
+  <li>
+    <a routerLink="" (click)="logout()"> Salir </a>
+  </li>
+</ul>
+
+<div class="color-ligth center" *ngIf="!logged">
+  <form>
+    <input [(ngModel)]="user.name" name="nombre" class="txt" placeholder="Digite su usuario">
+
+    <input [(ngModel)]="user.pass" name="password" class="txt" type="password" placeholder="Digite su contraseña">
+
+    <input (click)="login()" class="btn" type="submit" value="Ingresar" style="margin: auto">
+  </form>
+</div>
+<br>
+
+<router-outlet></router-outlet>
+
+<div class="center" style="text-align:center;">
+  <small> {{hora | date: "hh:mm:ss"}} </small>
+  <small> {{hora | date: "dd/MM/yyyy"}} </small>
+</div>
+
+<br>
+<div class="color-ligth center " *ngIf="logged">
+
+  <form>
+    <input (click)="logout()" routerLink="" class="btn" type="submit" value="Salir" style="margin: auto">
+  </form>
+</div>

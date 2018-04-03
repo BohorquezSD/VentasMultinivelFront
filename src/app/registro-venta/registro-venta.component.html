@@ -1,0 +1,169 @@
+<div class="center">
+<h1 >
+  Plataforma de compras Online
+</h1>
+<div *ngIf="regiones && regiones.length >0">
+  <table >
+    <thead>
+      <tr>
+        <th>Regiones</th>
+      </tr>
+    </thead>
+    <tr>
+      <th>
+        <select class="form-control" id="respuestaSelect" required name="respuesta" [(ngModel)]="region">
+          <option *ngFor="let region of regiones" [ngValue]="region">
+            {{region.nombre}}</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <small id="idHelpTipo" class="form-text text-muted">Seleccione la region a la que pertenece.</small>
+      </td>
+    </tr>
+
+      <tr>
+        <th>Categorias</th>
+      </tr>
+    <tr>
+      <th>
+        <select class="form-control" id="respuestaSelect" required name="respuesta" [(ngModel)]="categoria">
+          <option *ngFor="let categoria of categorias" [ngValue]="categoria">
+            {{categoria.nombre}}</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <small id="idHelpTipo" class="form-text text-muted">Seleccione la categoria del producto.</small>
+      </td>
+    </tr>
+    <tr>
+      <th>
+      <button (click)="verProductos()">
+      <i aria-hidden="true"></i>Buscar Productos </button>
+      </th>
+    </tr>
+  </table>
+  </div>
+  <table *ngIf="productos && !encarrito&& !pagar">
+    <tr >
+      <td >
+        Codigo
+      </td>
+      <td >
+        Producto
+      </td>
+      <td >
+        Descripcion
+      </td>
+      <td >
+        Subcategoria
+      </td>
+      <td>
+        Precio
+      </td>
+      <td >
+        Stock
+      </td>
+      <td> 
+        Cantidad a comprar
+      </td>
+      <td>
+        Añadir al carrito
+      </td>
+    </tr>
+    <tr *ngFor="let producto of productos">
+      <td> {{producto.codigo}}</td>
+      <td> {{producto.nombre}}</td>
+      <td> {{producto.descripcion}}</td>
+      <td> {{producto.subcategoria}}</td>
+      <td> {{producto.precio}}</td>
+      <td> {{producto.stock}}</td>
+      <td> 
+        <textarea [disabled]="producto.bloqueo"  style="width: 50px"  rows="1" required [(ngModel)]="producto.cantidad" name="producto.cantidad"></textarea>
+      </td>
+      <td>
+        <button [disabled]="producto.bloqueo" (click)="anadirAlCarrito(producto)">+</button>
+      </td>
+
+  </tr>
+  <tr>
+    <th class="center">
+    <button (click)="verCarrito()"> Ir al carrito</button>
+    </th>
+  </tr>
+  </table>
+        
+  <br>
+  <table *ngIf="encarrito">
+    <tr>
+      <td>
+        Codigo
+      </td>
+      <td>
+        Producto
+      </td>
+      <td>
+        Descripcion
+      </td>
+      <td>
+        Subcategoria
+      </td>
+      <td>
+        Precio unitario
+      </td>
+      <td>
+        Cantidad
+      </td>
+      <td>
+        Sacar del carrito
+      </td>
+    </tr>
+    <tr *ngFor="let car of carrito">
+      <td> {{car.codigo}}</td>
+      <td> {{car.nombre}}</td>
+      <td> {{car.descripcion}}</td>
+      <td> {{car.subcategoria}}</td>
+      <td> {{car.precio}}</td>
+      <td> {{car.cantidad}}</td>
+      <td>
+        <button (click)="sacarDelCarrito(car)">+</button>
+      </td>
+    </tr>
+    <tr>
+      <td><button (click)="verCarrito()"> Volver</button></td>
+      <td><button (click)="irAPagar()"> Ir a pagar</button></td>
+    </tr>
+  </table>
+  <table *ngIf="pagar">
+    <tr>
+      <td> Valor Total</td>
+      <td> {{valorTotal}}</td>
+    </tr>
+    <tr>
+      <td> Numero de items</td>
+      <td> {{items}}</td>
+    </tr>
+    <tr>
+      <td> Elejir medio de pago</td>
+    </tr>
+    <tr>
+      <td>
+      <input type="checkbox"  (click)="evaluaMedio()" [(ngModel)]="pagoTarjeta"> Tarjeta 
+     </td>
+     <td>
+        <input type="checkbox"  (click)="evaluaMedio()" [(ngModel)]="pagoPSE"> PSE
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button (click)="irAtras()"> Cancelar</button>
+      </td>
+      <td>
+        <button (click)="realizarVenta()"> Pagar</button>
+      </td>
+    </tr>
+  </table>
+  <br>

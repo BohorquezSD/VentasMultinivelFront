@@ -1,0 +1,46 @@
+  <div >
+    <form class="center" >
+      <input [(ngModel)]="busqueda" name="nombre" class="txt" placeholder="Digite el usuario">
+    
+      <input   (click)="verRoles()" class="btn" type="submit" value="Buscar Roles" style="width: 48%; float:left; margin:2px">
+      <input  (click)="verPrivilegios()" class="btn" type="submit" value="Buscar Privilegios" style="width: 48%; float:rigth; margin:2px" >
+    </form>
+  </div>
+  <br>
+<table class="center" *ngIf ="roles">
+  <thead>
+    <tr class="center">
+      <th>ROL</th>
+      <th>ADM</th>
+      <th>DEF</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let role of roles" >
+      <td> {{role.RoleAsociado}}</td>
+      <td> {{role.adm}}</td>
+      <td> {{role.def}}</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="center" *ngIf="privs">
+  <thead>
+    <tr class="center">
+      <th>PRIVILEGIO</th>
+      <th>ADM</th>
+      <th>DEF</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let privilegio of privs">
+      <td> {{privilegio.nombre}}</td>
+      <td> {{privilegio.RoleAsociado}}</td>
+      <td> {{privilegio.privs}}</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
