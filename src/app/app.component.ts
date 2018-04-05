@@ -47,7 +47,6 @@ export class AppComponent implements OnInit {
         } else {
           alert("Estado \n" + this.texto);
         }
-        this.isDBA();
         this.user.name = "";
         this.user.pass = "";
 
@@ -70,8 +69,10 @@ export class AppComponent implements OnInit {
       });
   }
   isDBA(){
-    if(localStorage.getItem("user") == "system"){
+    if(localStorage.getItem("user") == "system"|| localStorage.getItem("user")=="MULTINIVEL"){
       this.dba = true;
+    }else{
+      this.dba= false;
     }
   }
 

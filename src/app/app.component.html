@@ -11,8 +11,8 @@
   <li>
     <a routerLink="registroVenta"> Registrar Venta </a>
   </li>
-  <li >
-    <a routerLink="administraPriv"> Revisar roles </a>
+  <li *ngIf="dba" >
+    <a routerLink="administraPriv"> Ver privilegios </a>
   </li>
   <li>
     <a routerLink="" (click)="logout()"> Salir </a>

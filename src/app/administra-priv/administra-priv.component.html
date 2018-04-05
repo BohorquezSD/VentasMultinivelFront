@@ -29,9 +29,9 @@
 <table class="center" *ngIf="privs">
   <thead>
     <tr class="center">
-      <th>PRIVILEGIO</th>
-      <th>ADM</th>
-      <th>DEF</th>
+      <th>Nombre</th>
+      <th>Role</th>
+      <th>Privilegios </th>
       <th></th>
     </tr>
   </thead>
@@ -39,7 +39,7 @@
     <tr *ngFor="let privilegio of privs">
       <td> {{privilegio.nombre}}</td>
       <td> {{privilegio.RoleAsociado}}</td>
-      <td> {{privilegio.privs}}</td>
+      <td> {{privilegio.priv}}</td>
       <td> </td>
     </tr>
   </tbody>
