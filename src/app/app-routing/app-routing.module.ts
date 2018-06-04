@@ -5,6 +5,7 @@ import { RegistroClienteComponent } from '../registro-cliente/registro-cliente.c
 import { RegistroVentaComponent } from '../registro-venta/registro-venta.component';
 import { AdministraPrivComponent } from '../administra-priv/administra-priv.component'
 import { HomeComponent } from '../home/home.component';
+import {CalificacionVentaComponent} from  '../calificacion-venta/calificacion-venta.component'; 
 const routes: Routes = [
   {
     path: 'registroCliente',  //parent path, define the component that you imported earlier..
@@ -21,7 +22,11 @@ const routes: Routes = [
   {
     path: 'home',  //parent path, define the component that you imported earlier..
     component: HomeComponent,
-  }
+  },
+  {
+    path: 'calificacion',  //parent path, define the component that you imported earlier..
+    component: CalificacionVentaComponent,
+  },
 ];
 
 @NgModule({

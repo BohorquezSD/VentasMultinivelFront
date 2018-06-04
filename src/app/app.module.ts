@@ -14,6 +14,9 @@ import { RegistroVentaComponent } from './registro-venta/registro-venta.componen
 import { ConexionOracleService } from './service/conexion-oracle.service';
 import { AdministraPrivComponent } from './administra-priv/administra-priv.component';
 import { HomeComponent } from './home/home.component';
+import {CalificacionVentaComponent} from  './calificacion-venta/calificacion-venta.component'; 
+import { BarRatingModule } from "ngx-bar-rating";
+
 
 
 @NgModule({
@@ -22,13 +25,18 @@ import { HomeComponent } from './home/home.component';
     RegistroClienteComponent,
     RegistroVentaComponent,
     AdministraPrivComponent,
-    HomeComponent
+    HomeComponent,
+    CalificacionVentaComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    BarRatingModule,
+  
   ],
   providers: [
     ConexionOracleService

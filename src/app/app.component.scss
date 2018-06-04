@@ -9,11 +9,11 @@
 }
 
 .color-dark{
-    background: rgb(11, 89, 141);
+    background: rgb(19, 104, 161);
 }
 
 .color-light{
-    background: rgb(15, 106, 167);
+    background: rgb(19, 104, 161);
 }
 
 input.txt {
@@ -32,15 +32,23 @@ input.btn {
     border: 0;
     display:  block;
     padding: 1em 3em;
-    background: rgb(153, 158, 151);
+    background: rgb(19, 104, 161);
     color: rgb(12, 12, 12);
     margin-bottom: 1em;
     cursor: pointer;
 }
 
 .life-container {
-    background: rgb(7, 72, 116);
+    background: rgb(19, 104, 161);
     padding: 5em;
     font-weight: bold;
     cursor: pointer;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
 }

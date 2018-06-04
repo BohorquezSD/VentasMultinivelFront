@@ -1,0 +1,21 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+  <section>
+    <h1>Califica tu compra</h1>
+    <h2>
+      ¿La anteción de nuestro personal fue adecuada?
+      ¿El pedido recibido cumple con tus expectativas?
+    </h2>
+    <bar-rating [(rate)]="calificacion" [max]="5">hola</bar-rating>
+    <h2>
+      <p >
+        calificación actual: {{calificacion}}  <i class="fas fa-times-circle" (click)="setCero()"></i>
+      </p>
+      <input (click)="verRoles()" class="mat-raised-button" type="submit" value="Enviar Calificación" >
+      <!-- style="width: 48%; float:left; margin:2px" -->
+    </h2>
+  </section>
+
+</body>

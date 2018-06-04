@@ -22,7 +22,8 @@ export class ConexionOracleService {
     'Accept': 'application/json',
     });
 
-  url: string = "http://localhost:8080/VentasBackEnd/rest/";
+                 
+  url: string = "http://localhost:9090/VentasBackEd/rest/";
   postPago: string = 'postPagar';
   prueba: string = 'login/'
 
@@ -45,11 +46,13 @@ export class ConexionOracleService {
       params: new URLSearchParams(this.addUserParams(parametros)).toString(),
     }).catch((error:Response)=>{
       if (error.status === 0) {
+        alert(error.toString);
         //Conexión reusada, no hay conexión con el servidor
         alert("Se ha producido un error. No hay conexión con el servidor")
       }
       else if (error.status === 500) {
         //Error interno del servidor
+        
         alert("Se ha producido un error. Error interno en el servidor");
       } else if (error.status === 502) {
         //Bad gateway, servicio externo no respondió
